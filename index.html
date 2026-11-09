@@ -121,6 +121,21 @@ td.plain{font-family:var(--sans);font-size:12px}
   .hdr-mid{display:none}
   .chart-box{height:220px}
 }
+
+.channel-card{border:1px solid rgba(99,179,237,.12);border-radius:14px;padding:14px 16px;margin-bottom:10px;background:rgba(8,14,28,.35)}
+.channel-card .ch-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.channel-card .ch-name{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text)}
+.channel-card .ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.channel-card .ch-metric .m-lbl{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.channel-card .ch-metric .m-val{font-size:16px;font-weight:600;margin-top:2px}
+.channel-card .ch-src{margin-top:10px;font-size:11px;color:var(--muted);line-height:1.4}
+.pending{color:var(--amber)}
+.top-post{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(99,179,237,.08)}
+.top-post:last-child{border-bottom:none}
+.top-post .rank{font-family:var(--mono);color:var(--accent);font-size:12px;min-width:22px}
+.top-post .tp-title{font-size:13px;line-height:1.35}
+.top-post .tp-meta{font-size:11px;color:var(--muted);margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -160,7 +175,7 @@ td.plain{font-family:var(--sans);font-size:12px}
   <!-- OVERVIEW -->
   <div class="section active" id="sec-overview">
     <div id="kpiPrimary" class="kpi-grid fade"></div>
-    <div id="kpiSecondary" class="kpi-grid sec fade"></div>
+    <div id="kpiSecondary" class="kpi-grid fade"></div>
     <div class="seg-cards fade" id="campaignCards"></div>
     <div class="grid-2 fade">
       <div class="glass">
@@ -242,10 +257,36 @@ td.plain{font-family:var(--sans);font-size:12px}
 
   <!-- SOCIAL -->
   <div class="section" id="sec-social">
-    <div class="kpi-grid sec fade" id="socialKpis"></div>
-    <div class="glass fade">
-      <div class="panel-hdr"><div class="ptitle">Channels &amp; mix</div><div class="pmeta">NATIONWIDE DEFAULT</div></div>
-      <div id="socialDetails"></div>
+    <div class="kpi-grid fade" id="socialKpis"></div>
+    <div class="grid-2 fade" style="margin-bottom:14px">
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Followers trend</div><div class="pmeta">socialDaily</div></div>
+        <div class="chart-box"><canvas id="socialFollowersChart"></canvas></div>
+      </div>
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Views (impressions)</div><div class="pmeta">LAST 30 DAYS · socialDaily</div></div>
+        <div class="chart-box"><canvas id="socialViewsChart"></canvas></div>
+      </div>
+    </div>
+    <div class="grid-2 fade" style="margin-bottom:14px">
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Channel stats</div><div class="pmeta">FACEBOOK · INSTAGRAM · FUTURE</div></div>
+        <div id="socialChannelCards"></div>
+      </div>
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Top posts (30d)</div><div class="pmeta">BY VIEWS</div></div>
+        <div id="socialTopPosts"></div>
+      </div>
+    </div>
+    <div class="grid-2 fade" style="margin-bottom:14px">
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Social referrals to site</div><div class="pmeta">GA4 · facebook / instagram</div></div>
+        <div id="socialReferrals"></div>
+      </div>
+      <div class="glass">
+        <div class="panel-hdr"><div class="ptitle">Channels &amp; mix</div><div class="pmeta">NATIONWIDE DEFAULT</div></div>
+        <div id="socialDetails"></div>
+      </div>
     </div>
   </div>
 
@@ -293,10 +334,20 @@ function renderOverview(){
     kpiCard('Impressions', fmtNum(a.impressions), `Through ${DATA.adsMetrics.throughDate}`, 'purple'),
     kpiCard('Spend', fmtMoney(a.costUsd), `${fmtNum(a.clicks)} clicks`, 'amber')
   ].join('');
+  const soc = DATA.social || {};
+  const sst = (soc.stats || {});
+  const fb = sst.facebook || {};
+  const ig = sst.instagram || {};
+  const totalFollowers = [fb.followers, ig.followers].filter(v => v != null).reduce((a,b)=>a+b, 0);
+  const totalViews = [fb.views30d, ig.views30d].filter(v => v != null).reduce((a,b)=>a+b, 0);
+  const hasFollowers = fb.followers != null || ig.followers != null;
+  const hasViews = fb.views30d != null || ig.views30d != null;
   $('kpiSecondary').innerHTML = [
     kpiCard('CJ joined', fmtNum(aff.joined), `CID ${aff.publisherCid}`, 'green'),
     kpiCard('Pending', fmtNum(aff.pending.length), 'Applications open', 'amber'),
-    kpiCard('Declined', fmtNum(aff.declined.length), 'Win-backs in progress', 'red')
+    kpiCard('Declined', fmtNum(aff.declined.length), 'Win-backs in progress', 'red'),
+    kpiCard('Social followers', hasFollowers ? fmtNum(totalFollowers) : 'Pending', 'FB + IG', 'purple'),
+    kpiCard('Social views 30d', hasViews ? fmtNum(totalViews) : 'Pending', 'Page / post views', 'accent')
   ].join('');
 
   $('campaignCards').innerHTML = DATA.campaigns.map(c => `
@@ -424,18 +475,148 @@ function renderAffiliates(){
     <div class="row" style="margin-top:8px"><div><div class="row-title">Lifeline partner</div><div class="row-sub">${a.lifelinePartner}</div></div><span class="pill good">ACTIVE</span></div>`;
 }
 
+function pendingOr(v, pendingLabel='Pending'){
+  if(v == null || v === '') return `<span class="pending">${pendingLabel}</span>`;
+  return v;
+}
+function fmtDelta(v){
+  if(v == null || Number.isNaN(v)) return 'Pending';
+  const n = Number(v);
+  const sign = n > 0 ? '+' : '';
+  return sign + n.toLocaleString('en-US');
+}
+function channelCard(key, st){
+  if(!st) return '';
+  const status = st.status || '';
+  const isPending = /pending/i.test(status) && st.followers == null && st.views30d == null;
+  const pill = isPending
+    ? '<span class="pill warn">PENDING</span>'
+    : (st.followers != null || st.views30d != null ? '<span class="pill good">LIVE DATA</span>' : '<span class="pill warn">PARTIAL</span>');
+  const eng = st.engagementRate30d == null ? pendingOr(null) : fmtPct(st.engagementRate30d);
+  const top = st.topPost30d
+    ? `${st.topPost30d.title || 'Untitled'} · ${st.topPost30d.date || '—'} · ${fmtNum(st.topPost30d.views)} views`
+    : pendingOr(null);
+  return `<div class="channel-card">
+    <div class="ch-head"><div class="ch-name">${key}</div>${pill}</div>
+    <div class="ch-grid">
+      <div class="ch-metric"><div class="m-lbl">Followers</div><div class="m-val">${st.followers == null ? pendingOr(null) : fmtNum(st.followers)}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Δ 7d</div><div class="m-val" style="font-size:13px">${pendingOr(st.followersChange7d == null ? null : fmtDelta(st.followersChange7d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Δ 30d</div><div class="m-val" style="font-size:13px">${pendingOr(st.followersChange30d == null ? null : fmtDelta(st.followersChange30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Views 30d</div><div class="m-val">${st.views30d == null ? pendingOr(null) : fmtNum(st.views30d)}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Reach 30d</div><div class="m-val">${pendingOr(st.reach30d == null ? null : fmtNum(st.reach30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Engagement</div><div class="m-val" style="font-size:13px">${st.interactions30d == null ? pendingOr(null) : fmtNum(st.interactions30d)}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Eng. rate</div><div class="m-val" style="font-size:13px">${eng}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Link clicks</div><div class="m-val">${pendingOr(st.linkClicks30d == null ? null : fmtNum(st.linkClicks30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Posts 30d</div><div class="m-val">${st.postsPublished30d == null ? pendingOr(null) : fmtNum(st.postsPublished30d)}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Profile visits</div><div class="m-val">${pendingOr(st.profileVisits30d == null ? null : fmtNum(st.profileVisits30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Top post</div><div class="m-val" style="font-size:11px;line-height:1.35;font-weight:500">${top}</div></div>
+      <div class="ch-metric"><div class="m-lbl">As of</div><div class="m-val" style="font-size:12px">${st.asOf || '—'}</div></div>
+    </div>
+    <div class="ch-src">${status ? status + ' · ' : ''}${st.source || ''}</div>
+  </div>`;
+}
+function renderSocialCharts(){
+  const rows = (DATA.social && DATA.social.socialDaily) || [];
+  const fb = rows.filter(r => r.channel === 'facebook').sort((a,b)=>a.date.localeCompare(b.date));
+  const labels = fb.map(r => r.date.slice(5));
+  const followers = fb.map(r => r.followers);
+  const views = fb.map(r => r.views);
+
+  destroyChart('socialFollowers');
+  charts.socialFollowers = new Chart($('socialFollowersChart'), {
+    type:'line',
+    data:{
+      labels,
+      datasets:[{
+        label:'Followers',
+        data: followers,
+        borderColor:'#38bdf8',
+        backgroundColor:'rgba(56,189,248,.15)',
+        spanGaps:true,
+        tension:.35,
+        pointRadius:3,
+        fill:true
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{ticks:{color:'#a7b4c9', font:{family:'Space Mono', size:10}}, grid:{color:'rgba(99,179,237,.06)'}},
+        y:{beginAtZero:true, ticks:{color:'#a7b4c9', precision:0, font:{family:'Space Mono', size:10}}, grid:{color:'rgba(99,179,237,.06)'}}
+      }
+    }
+  });
+
+  destroyChart('socialViews');
+  charts.socialViews = new Chart($('socialViewsChart'), {
+    type:'bar',
+    data:{
+      labels,
+      datasets:[{
+        label:'Views',
+        data: views,
+        backgroundColor:'#34d399',
+        borderRadius:8
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{ticks:{color:'#a7b4c9', font:{family:'Space Mono', size:10}}, grid:{color:'rgba(99,179,237,.06)'}},
+        y:{beginAtZero:true, ticks:{color:'#a7b4c9', font:{family:'Space Mono', size:10}}, grid:{color:'rgba(99,179,237,.06)'}}
+      }
+    }
+  });
+}
 function renderSocial(){
-  const s = DATA.social;
+  const s = DATA.social || {};
+  const stats = s.stats || {};
+  const fb = stats.facebook || {};
+  const ig = stats.instagram || {};
+  const totalFollowers = [fb.followers, ig.followers].filter(v => v != null).reduce((a,b)=>a+b, 0);
+  const totalViews = [fb.views30d, ig.views30d].filter(v => v != null).reduce((a,b)=>a+b, 0);
+  const hasFollowers = fb.followers != null || ig.followers != null;
+  const hasViews = fb.views30d != null || ig.views30d != null;
+
   $('socialKpis').innerHTML = [
-    kpiCard('Nationwide posts ready', fmtNum(s.nationwidePostsPrepared), 'Not scheduled yet', 'green'),
-    kpiCard('Scheduled', fmtNum(s.nationwidePostsScheduled), 'Buffer / IG', 'amber'),
-    kpiCard('Mix rule', '75%', 'Nationwide default', 'accent')
+    kpiCard('Total followers', hasFollowers ? fmtNum(totalFollowers) : 'Pending', 'FB + IG (known channels)', 'green'),
+    kpiCard('Views 30d', hasViews ? fmtNum(totalViews) : 'Pending', fb.viewsChange30dPct != null ? `FB ${fb.viewsChange30dPct}% vs prior` : 'Page + post views', 'accent'),
+    kpiCard('Posts 30d', fb.postsPublished30d == null ? 'Pending' : fmtNum(fb.postsPublished30d), 'Facebook Page (Buffer)', 'purple'),
+    kpiCard('Scheduled ahead', fmtNum(s.nationwidePostsScheduled), 'Buffer queue', 'amber')
   ].join('');
+
+  const order = ['facebook','instagram','pinterest','reddit','x'];
+  $('socialChannelCards').innerHTML = order
+    .filter(k => stats[k])
+    .map(k => channelCard(k, stats[k]))
+    .join('') || '<p style="color:var(--muted);font-size:13px">No channel stats yet.</p>';
+
+  const tops = s.topPosts || [];
+  $('socialTopPosts').innerHTML = tops.length
+    ? tops.map((p,i) => {
+        const title = p.url
+          ? `<a href="${p.url}" target="_blank" rel="noopener" style="color:var(--text)">${p.title || 'Untitled'}</a>`
+          : (p.title || 'Untitled');
+        return `<div class="top-post"><div class="rank">#${i+1}</div><div><div class="tp-title">${title}</div><div class="tp-meta">${(p.channel||'').toUpperCase()} · ${p.date || '—'} · ${fmtNum(p.views)} views</div></div></div>`;
+      }).join('')
+    : '<p style="color:var(--muted);font-size:13px">No top posts yet.</p>';
+
+  const ref = s.siteReferrals || {};
+  const refStatus = ref.status || 'Not connected yet';
+  $('socialReferrals').innerHTML = `
+    <div class="kpi-grid sec" style="margin:0">
+      ${kpiCard('Facebook → site', ref.facebookSessions30d == null ? 'Not connected yet' : fmtNum(ref.facebookSessions30d), 'GA4 source = facebook', 'accent')}
+      ${kpiCard('Instagram → site', ref.instagramSessions30d == null ? 'Not connected yet' : fmtNum(ref.instagramSessions30d), 'GA4 source = instagram', 'purple')}
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:12px;line-height:1.45">${refStatus}. ${ref.note || ''}</p>`;
+
   $('socialDetails').innerHTML = `
     <div class="row"><div><div class="row-title">Facebook Page</div><div class="row-sub"><a href="${s.facebookPage}" target="_blank" rel="noopener" style="color:var(--accent)">${s.facebookPage}</a></div></div><span class="pill good">LIVE</span></div>
-    <div class="row" style="margin-top:8px"><div><div class="row-title">Instagram</div><div class="row-sub">${s.instagramHandle}</div></div><span class="pill warn">TO CONFIRM</span></div>
+    <div class="row" style="margin-top:8px"><div><div class="row-title">Instagram</div><div class="row-sub">${s.instagramHandle}</div></div><span class="pill warn">PENDING · FROM PHONE</span></div>
     <div class="row" style="margin-top:8px"><div><div class="row-title">Content mix</div><div class="row-sub">${s.contentMixRule}</div></div><span class="pill accent">POLICY</span></div>
-    <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5">${s.note}</p>`;
+    <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5">${s.note || ''}</p>`;
+
+  renderSocialCharts();
 }
 
 function renderBlockers(){
@@ -448,7 +629,7 @@ function showSection(id){
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.sec === id));
   $('sec-'+id).classList.add('active');
-  if(id === 'overview'){ /* charts already built */ }
+  if(id === 'social'){ renderSocialCharts(); }
 }
 
 function boot(data){

@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Miami Metro · BenefitBoost Mission Control",
+    "title": "Miami Metro \u00b7 BenefitBoost Mission Control",
     "brand": "Miami Metro LLC",
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-09T10:15:00-05:00",
+    "updatedAt": "2026-11-09T10:40:00-05:00",
     "dataWindow": {
       "from": "2026-11-05",
       "to": "2026-11-09",
-      "label": "Nov 5–9, 2026 · campaign launch window",
+      "label": "Nov 5\u20139, 2026 \u00b7 campaign launch window",
       "granularity": "daily"
     },
-    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows."
+    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows. Daily job also refreshes social.stats (Buffer Facebook) and appends socialDaily[]; Instagram stays Pending from Javier's phone; GA4 social referrals stay Not connected yet until API access."
   },
   "budgets": {
     "dailyTotalUsd": 30,
@@ -143,7 +143,7 @@
         "impressions": null,
         "clicks": null,
         "costUsd": null,
-        "status": "Enabled · Eligible (Learning) · day in progress"
+        "status": "Enabled \u00b7 Eligible (Learning) \u00b7 day in progress"
       },
       {
         "date": "2026-11-09",
@@ -151,7 +151,7 @@
         "impressions": null,
         "clicks": null,
         "costUsd": null,
-        "status": "Enabled · Eligible (Learning) · keywords pending review"
+        "status": "Enabled \u00b7 Eligible (Learning) \u00b7 keywords pending review"
       }
     ]
   },
@@ -208,12 +208,12 @@
       },
       {
         "partner": "Tello",
-        "status": "Draft ready — Javier to send to affiliate@tello.com",
+        "status": "Draft ready \u2014 Javier to send to affiliate@tello.com",
         "date": "2026-11-09"
       },
       {
         "partner": "Xfinity Residential",
-        "status": "Draft ready — Javier to send to Xfinity_Affiliate@cj.com",
+        "status": "Draft ready \u2014 Javier to send to Xfinity_Affiliate@cj.com",
         "date": "2026-11-09"
       }
     ],
@@ -222,11 +222,213 @@
   },
   "social": {
     "facebookPage": "https://www.facebook.com/profile.php?id=61596397852467",
-    "instagramHandle": "to confirm (@benefitboost.us vs @benefitboost.app)",
+    "facebookPageAlt": "https://facebook.com/1405508039317703",
+    "instagramHandle": "@benefitboost.us (confirm vs @benefitboost.app)",
     "contentMixRule": "About 75% nationwide; state spotlights rotate (CA, TX, FL, NY, etc.)",
     "nationwidePostsPrepared": 6,
-    "nationwidePostsScheduled": 0,
-    "note": "Six nationwide posts prepared (deposit finder, SNAP basics, EBT security, Lifeline/SafeLink may-qualify, intro, site walkthrough). Not yet scheduled in Buffer. Recent Facebook feed skewed Florida (Nov 7–9 reels)."
+    "nationwidePostsScheduled": 4,
+    "note": "Facebook Page views/followers from Professional dashboard Insights (Oct 10\u2013Nov 8, asOf Nov 9). Posts published + scheduled from Buffer (BenefitBoost Page only). Reach, link clicks, Page visits, follower deltas not shown \u2192 Pending. Instagram stats come from Javier's phone \u2014 never log into IG from the box. GA4 social referrals stay Not connected yet. Content mix: ~75% nationwide.",
+    "stats": {
+      "facebook": {
+        "followers": 1,
+        "followersChange7d": null,
+        "followersChange30d": null,
+        "reach30d": null,
+        "views30d": 43,
+        "interactions30d": 0,
+        "reactions30d": 0,
+        "comments30d": 0,
+        "shares30d": 0,
+        "engagementRate30d": 0.0,
+        "linkClicks30d": null,
+        "postsPublished30d": 10,
+        "profileVisits30d": null,
+        "avgImpressionsPerPost30d": 4.3,
+        "scheduledAhead": 4,
+        "topPost30d": {
+          "title": "Untitled post (no text)",
+          "date": "2026-11-03",
+          "views": 12,
+          "url": null
+        },
+        "asOf": "2026-11-09",
+        "source": "facebook.com/professional_dashboard/profile_insights/views/ (range Oct 10\u2013Nov 8, 2026) + Buffer list_posts for postsPublished30d/scheduledAhead",
+        "status": "partial \u2014 reach, link clicks, Page visits, follower deltas Pending (not shown in Insights)",
+        "viewsChange30dPct": 100,
+        "views3s30d": 9,
+        "views1m30d": 0,
+        "watchTime30d": "1m 23s",
+        "viewsFromNonFollowersPct": 65.1,
+        "viewsFromFollowersPct": 34.9,
+        "postsPublished30dNote": "10+ on Facebook Professional dashboard; Buffer sent-count for BenefitBoost Page = 10"
+      },
+      "instagram": {
+        "followers": null,
+        "followersChange7d": null,
+        "followersChange30d": null,
+        "reach30d": null,
+        "views30d": null,
+        "interactions30d": null,
+        "reactions30d": null,
+        "comments30d": null,
+        "shares30d": null,
+        "engagementRate30d": null,
+        "linkClicks30d": null,
+        "postsPublished30d": null,
+        "profileVisits30d": null,
+        "avgImpressionsPerPost30d": null,
+        "scheduledAhead": null,
+        "topPost30d": null,
+        "asOf": null,
+        "source": "Pending \u2014 from Javier's phone (do not log into Instagram from the box)",
+        "status": "Pending \u2014 from Javier's phone"
+      },
+      "pinterest": {
+        "followers": null,
+        "followersChange7d": null,
+        "followersChange30d": null,
+        "reach30d": null,
+        "views30d": null,
+        "interactions30d": null,
+        "reactions30d": null,
+        "comments30d": null,
+        "shares30d": null,
+        "engagementRate30d": null,
+        "linkClicks30d": null,
+        "postsPublished30d": null,
+        "profileVisits30d": null,
+        "avgImpressionsPerPost30d": null,
+        "scheduledAhead": null,
+        "topPost30d": null,
+        "asOf": null,
+        "source": "Future slot",
+        "status": "Pending \u2014 channel not connected"
+      },
+      "reddit": {
+        "followers": null,
+        "followersChange7d": null,
+        "followersChange30d": null,
+        "reach30d": null,
+        "views30d": null,
+        "interactions30d": null,
+        "reactions30d": null,
+        "comments30d": null,
+        "shares30d": null,
+        "engagementRate30d": null,
+        "linkClicks30d": null,
+        "postsPublished30d": null,
+        "profileVisits30d": null,
+        "avgImpressionsPerPost30d": null,
+        "scheduledAhead": null,
+        "topPost30d": null,
+        "asOf": null,
+        "source": "Future slot",
+        "status": "Pending \u2014 channel not connected"
+      },
+      "x": {
+        "followers": null,
+        "followersChange7d": null,
+        "followersChange30d": null,
+        "reach30d": null,
+        "views30d": null,
+        "interactions30d": null,
+        "reactions30d": null,
+        "comments30d": null,
+        "shares30d": null,
+        "engagementRate30d": null,
+        "linkClicks30d": null,
+        "postsPublished30d": null,
+        "profileVisits30d": null,
+        "avgImpressionsPerPost30d": null,
+        "scheduledAhead": null,
+        "topPost30d": null,
+        "asOf": null,
+        "source": "Future slot",
+        "status": "Pending \u2014 channel not connected"
+      }
+    },
+    "siteReferrals": {
+      "facebookSessions30d": null,
+      "instagramSessions30d": null,
+      "status": "Not connected yet",
+      "note": "Fill from GA4 sessionSource / sessionMedium (facebook, instagram / social) once Analytics API or export access exists.",
+      "asOf": null,
+      "source": "GA4 (pending)"
+    },
+    "socialDaily": [
+      {
+        "date": "2026-11-03",
+        "channel": "facebook",
+        "followers": null,
+        "views": 17,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-04",
+        "channel": "facebook",
+        "followers": null,
+        "views": 1,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-05",
+        "channel": "facebook",
+        "followers": null,
+        "views": 3,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-06",
+        "channel": "facebook",
+        "followers": null,
+        "views": 0,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-07",
+        "channel": "facebook",
+        "followers": null,
+        "views": 8,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-08",
+        "channel": "facebook",
+        "followers": null,
+        "views": 6,
+        "note": "Buffer post impressions that day"
+      },
+      {
+        "date": "2026-11-09",
+        "channel": "facebook",
+        "followers": 1,
+        "views": 43,
+        "note": "FB Professional dashboard snapshot: followers=1, views30d=43"
+      }
+    ],
+    "topPosts": [
+      {
+        "channel": "facebook",
+        "title": "Untitled post (no text)",
+        "date": "2026-11-03",
+        "views": 12,
+        "url": null
+      },
+      {
+        "channel": "facebook",
+        "title": "Florida SNAP households: work requirements and recertification deadlines\u2026",
+        "date": "2026-11-06",
+        "views": 10,
+        "url": null
+      },
+      {
+        "channel": "facebook",
+        "title": "Florida SNAP deposits are spread across days 1\u201328 each month\u2026",
+        "date": "2026-11-07",
+        "views": 7,
+        "url": null
+      }
+    ]
   },
   "openQuestions": [
     {
@@ -248,6 +450,14 @@
     {
       "priority": "medium",
       "item": "Approve scheduling the 6 nationwide posts in Buffer (Facebook) + IG from phone"
+    },
+    {
+      "priority": "medium",
+      "item": "Provide Facebook Page followers + 30-day reach / profile visits (Insights) so Mission Control can fill remaining FB fields"
+    },
+    {
+      "priority": "medium",
+      "item": "Send Instagram followers, 30-day views/reach, and profile visits from phone Insights (@benefitboost.us)"
     }
   ],
   "links": [
@@ -277,6 +487,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-09",
+      "summary": "Social stats: Facebook Professional dashboard Insights filled (1 follower, 43 views / 30d, +100% views, 10+ posts). Reach/link clicks/Page visits Pending. Instagram still from Javier's phone."
+    },
     {
       "date": "2026-11-09",
       "summary": "Nationwide Search campaign published (ID 24448608398) at $20/day, $0.10 max CPC. Florida kept at $10/day. Cricket CJ Mail win-back sent. Mission Control dashboard launched."
