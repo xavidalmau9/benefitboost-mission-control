@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "title": "Miami Metro · BenefitBoost Mission Control",
+    "brand": "Miami Metro LLC",
+    "product": "BenefitBoost",
+    "siteUrl": "https://getbenefitboost.com",
+    "timezone": "America/New_York",
+    "updatedAt": "2026-11-09T10:15:00-05:00",
+    "dataWindow": {
+      "from": "2026-11-05",
+      "to": "2026-11-09",
+      "label": "Nov 5–9, 2026 · campaign launch window",
+      "granularity": "daily"
+    },
+    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows."
+  },
+  "budgets": {
+    "dailyTotalUsd": 30,
+    "nationwideDailyUsd": 20,
+    "floridaDailyUsd": 10,
+    "maxCpcUsd": 0.1,
+    "bidding": "Maximize clicks with max CPC cap"
+  },
+  "campaigns": [
+    {
+      "id": "nationwide",
+      "campaignId": "24448608398",
+      "name": "BenefitBoost - US SNAP Deposit Dates - Search",
+      "status": "Enabled",
+      "eligibility": "Eligible (Learning)",
+      "asOf": "2026-11-09",
+      "dailyBudgetUsd": 20,
+      "bidding": "Maximize clicks",
+      "maxCpcUsd": 0.1,
+      "geo": "United States (Presence)",
+      "network": "Search only",
+      "language": "English (unconfirmed in UI after publish)",
+      "keywords": {
+        "count": 16,
+        "matchType": "Phrase",
+        "reviewStatus": "Pending review"
+      },
+      "negatives": 25,
+      "rsa": {
+        "headlines": 15,
+        "descriptions": 4,
+        "strength": "Good",
+        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule"
+      },
+      "colorKey": "green",
+      "hex": "#34d399",
+      "notes": "Primary nationwide Search campaign. Keywords pending Google review (usually up to 1 day)."
+    },
+    {
+      "id": "florida",
+      "campaignId": "24438311912",
+      "name": "BenefitBoost - Florida SNAP Dates - Search",
+      "status": "Enabled",
+      "eligibility": "Eligible (Learning)",
+      "asOf": "2026-11-09",
+      "dailyBudgetUsd": 10,
+      "bidding": "Maximize clicks",
+      "maxCpcUsd": 0.1,
+      "geo": "Florida (Presence)",
+      "network": "Search only",
+      "keywords": {
+        "count": 6,
+        "exact": 3,
+        "phrase": 3,
+        "lowSearchVolume": 3,
+        "reviewStatus": "Approved / Low search volume on 3"
+      },
+      "negatives": 16,
+      "rsa": {
+        "strength": "Poor (earlier) / keep monitoring",
+        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule/florida"
+      },
+      "colorKey": "accent",
+      "hex": "#38bdf8",
+      "notes": "Kept as a $10/day state spotlight. 3 of 6 keywords marked Low search volume and cannot serve."
+    }
+  ],
+  "adsMetrics": {
+    "awaitingData": false,
+    "throughDate": "2026-11-08",
+    "totals": {
+      "impressions": 0,
+      "clicks": 0,
+      "costUsd": 0,
+      "ctrPct": null,
+      "avgCpcUsd": null
+    },
+    "byCampaign": {
+      "nationwide": {
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "note": "Published Nov 9; no serve window yet through Nov 8"
+      },
+      "florida": {
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "note": "Enabled; low-volume keywords + $0.10 cap limit auctions"
+      }
+    },
+    "dailyRows": [
+      {
+        "date": "2026-11-05",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Draft / paused period"
+      },
+      {
+        "date": "2026-11-06",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Paused"
+      },
+      {
+        "date": "2026-11-07",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Paused"
+      },
+      {
+        "date": "2026-11-08",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Paused / pre-enable"
+      },
+      {
+        "date": "2026-11-09",
+        "campaign": "florida",
+        "impressions": null,
+        "clicks": null,
+        "costUsd": null,
+        "status": "Enabled · Eligible (Learning) · day in progress"
+      },
+      {
+        "date": "2026-11-09",
+        "campaign": "nationwide",
+        "impressions": null,
+        "clicks": null,
+        "costUsd": null,
+        "status": "Enabled · Eligible (Learning) · keywords pending review"
+      }
+    ]
+  },
+  "siteTraffic": {
+    "ga4MeasurementId": "G-GX501BDC70",
+    "searchConsole": "Verified in site code",
+    "status": "Not connected yet",
+    "note": "Tag and Search Console verification exist on getbenefitboost.com. Live metrics require GA4/Search Console API (or export) access for the daily job.",
+    "metrics": {
+      "sessions": null,
+      "users": null,
+      "pageviews": null,
+      "topPages": [],
+      "organicClicks": null,
+      "organicImpressions": null
+    }
+  },
+  "affiliates": {
+    "network": "CJ Affiliate",
+    "publisherCid": "8113194",
+    "asOf": "2026-11-09",
+    "joined": 0,
+    "pending": [
+      "AirTalk",
+      "AT&T Internet",
+      "AT&T Mobility",
+      "BJ's Memberships",
+      "Frontier",
+      "Groupon Influencer",
+      "TaxAct",
+      "TaxSlayer",
+      "Thrive Market",
+      "TurboTax",
+      "Verizon",
+      "Verizon Home Internet",
+      "Walgreens",
+      "Xfinity Mobile"
+    ],
+    "declined": [
+      "Cricket",
+      "Experian",
+      "Groupon North America",
+      "LibertyTax",
+      "Optimum",
+      "Spectrum",
+      "Tello",
+      "Xfinity Residential"
+    ],
+    "winBacks": [
+      {
+        "partner": "Cricket",
+        "status": "Reconsideration sent via CJ Mail",
+        "date": "2026-11-09"
+      },
+      {
+        "partner": "Tello",
+        "status": "Draft ready — Javier to send to affiliate@tello.com",
+        "date": "2026-11-09"
+      },
+      {
+        "partner": "Xfinity Residential",
+        "status": "Draft ready — Javier to send to Xfinity_Affiliate@cj.com",
+        "date": "2026-11-09"
+      }
+    ],
+    "impact": "Account in review",
+    "lifelinePartner": "SafeLink only (Assurance is out)"
+  },
+  "social": {
+    "facebookPage": "https://www.facebook.com/profile.php?id=61596397852467",
+    "instagramHandle": "to confirm (@benefitboost.us vs @benefitboost.app)",
+    "contentMixRule": "About 75% nationwide; state spotlights rotate (CA, TX, FL, NY, etc.)",
+    "nationwidePostsPrepared": 6,
+    "nationwidePostsScheduled": 0,
+    "note": "Six nationwide posts prepared (deposit finder, SNAP basics, EBT security, Lifeline/SafeLink may-qualify, intro, site walkthrough). Not yet scheduled in Buffer. Recent Facebook feed skewed Florida (Nov 7–9 reels)."
+  },
+  "openQuestions": [
+    {
+      "priority": "high",
+      "item": "Send Tello reconsideration email (affiliate@tello.com) with media kit"
+    },
+    {
+      "priority": "high",
+      "item": "Send Xfinity Residential reconsideration email (Xfinity_Affiliate@cj.com)"
+    },
+    {
+      "priority": "high",
+      "item": "Grant GA4 + Search Console access so daily dashboard can show real site traffic"
+    },
+    {
+      "priority": "medium",
+      "item": "Confirm Instagram handle (@benefitboost.us vs @benefitboost.app)"
+    },
+    {
+      "priority": "medium",
+      "item": "Approve scheduling the 6 nationwide posts in Buffer (Facebook) + IG from phone"
+    }
+  ],
+  "links": [
+    {
+      "label": "Site",
+      "url": "https://getbenefitboost.com"
+    },
+    {
+      "label": "SNAP deposit schedule (all states)",
+      "url": "https://getbenefitboost.com/snap-deposit-schedule"
+    },
+    {
+      "label": "Media kit",
+      "url": "https://getbenefitboost.com/media-kit"
+    },
+    {
+      "label": "Partners / compliance",
+      "url": "https://getbenefitboost.com/partners"
+    },
+    {
+      "label": "Free-tools traffic plan",
+      "url": "https://cursor.com/canvas/store-5df83cd9-332e-4913-bf44-bf3329861e48/dd127f73-49e2-410f-94f5-75e4e72c217f"
+    },
+    {
+      "label": "Facebook Page",
+      "url": "https://www.facebook.com/profile.php?id=61596397852467"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-09",
+      "summary": "Nationwide Search campaign published (ID 24448608398) at $20/day, $0.10 max CPC. Florida kept at $10/day. Cricket CJ Mail win-back sent. Mission Control dashboard launched."
+    },
+    {
+      "date": "2026-11-09",
+      "summary": "Florida campaign re-enabled after pause; budget lowered to $10/day per Javier."
+    },
+    {
+      "date": "2026-11-06",
+      "summary": "Florida Search campaign created (ID 24438311912); initially paused for verification."
+    }
+  ]
+}
