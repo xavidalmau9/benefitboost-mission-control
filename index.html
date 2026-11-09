@@ -480,10 +480,17 @@ function pendingOr(v, pendingLabel='Pending'){
   return v;
 }
 function fmtDelta(v){
-  if(v == null || Number.isNaN(v)) return 'Pending';
+  if(v == null || v === '') return null;
+  if(typeof v === 'string') return v; // e.g. "Not shown — tracking starts today"
   const n = Number(v);
+  if(Number.isNaN(n)) return String(v);
   const sign = n > 0 ? '+' : '';
   return sign + n.toLocaleString('en-US');
+}
+function fmtMetric(v){
+  if(v == null || v === '') return pendingOr(null);
+  if(typeof v === 'string') return `<span style="font-size:11px;line-height:1.3;font-weight:500">${v}</span>`;
+  return fmtNum(v);
 }
 function channelCard(key, st){
   if(!st) return '';
@@ -494,21 +501,28 @@ function channelCard(key, st){
     : (st.followers != null || st.views30d != null ? '<span class="pill good">LIVE DATA</span>' : '<span class="pill warn">PARTIAL</span>');
   const eng = st.engagementRate30d == null ? pendingOr(null) : fmtPct(st.engagementRate30d);
   const top = st.topPost30d
-    ? `${st.topPost30d.title || 'Untitled'} · ${st.topPost30d.date || '—'} · ${fmtNum(st.topPost30d.views)} views`
+    ? (st.topPost30d.url
+        ? `<a href="${st.topPost30d.url}" target="_blank" rel="noopener" style="color:var(--text)">${st.topPost30d.title || 'Untitled'}</a> · ${st.topPost30d.date || '—'} · ${fmtNum(st.topPost30d.views)} views`
+        : `${st.topPost30d.title || 'Untitled'} · ${st.topPost30d.date || '—'} · ${fmtNum(st.topPost30d.views)} views`)
     : pendingOr(null);
+  const reachLabel = (st.reach30d == null && st.viewers30d != null) ? 'Viewers 30d' : 'Reach 30d';
+  const reachVal = st.reach30d != null ? fmtNum(st.reach30d)
+    : (st.viewers30d != null ? fmtNum(st.viewers30d) : pendingOr(null));
+  const d7 = fmtDelta(st.followersChange7d);
+  const d30 = fmtDelta(st.followersChange30d);
   return `<div class="channel-card">
-    <div class="ch-head"><div class="ch-name">${key}</div>${pill}</div>
+    <div class="ch-head"><div class="ch-name">${key}${st.handle ? ' · ' + st.handle : ''}</div>${pill}</div>
     <div class="ch-grid">
       <div class="ch-metric"><div class="m-lbl">Followers</div><div class="m-val">${st.followers == null ? pendingOr(null) : fmtNum(st.followers)}</div></div>
-      <div class="ch-metric"><div class="m-lbl">Δ 7d</div><div class="m-val" style="font-size:13px">${pendingOr(st.followersChange7d == null ? null : fmtDelta(st.followersChange7d))}</div></div>
-      <div class="ch-metric"><div class="m-lbl">Δ 30d</div><div class="m-val" style="font-size:13px">${pendingOr(st.followersChange30d == null ? null : fmtDelta(st.followersChange30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Δ 7d</div><div class="m-val" style="font-size:11px;line-height:1.3">${d7 == null ? pendingOr(null) : d7}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Δ 30d</div><div class="m-val" style="font-size:11px;line-height:1.3">${d30 == null ? pendingOr(null) : d30}</div></div>
       <div class="ch-metric"><div class="m-lbl">Views 30d</div><div class="m-val">${st.views30d == null ? pendingOr(null) : fmtNum(st.views30d)}</div></div>
-      <div class="ch-metric"><div class="m-lbl">Reach 30d</div><div class="m-val">${pendingOr(st.reach30d == null ? null : fmtNum(st.reach30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">${reachLabel}</div><div class="m-val">${reachVal}</div></div>
       <div class="ch-metric"><div class="m-lbl">Engagement</div><div class="m-val" style="font-size:13px">${st.interactions30d == null ? pendingOr(null) : fmtNum(st.interactions30d)}</div></div>
       <div class="ch-metric"><div class="m-lbl">Eng. rate</div><div class="m-val" style="font-size:13px">${eng}</div></div>
-      <div class="ch-metric"><div class="m-lbl">Link clicks</div><div class="m-val">${pendingOr(st.linkClicks30d == null ? null : fmtNum(st.linkClicks30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Link clicks</div><div class="m-val">${fmtMetric(st.linkClicks30d)}</div></div>
       <div class="ch-metric"><div class="m-lbl">Posts 30d</div><div class="m-val">${st.postsPublished30d == null ? pendingOr(null) : fmtNum(st.postsPublished30d)}</div></div>
-      <div class="ch-metric"><div class="m-lbl">Profile visits</div><div class="m-val">${pendingOr(st.profileVisits30d == null ? null : fmtNum(st.profileVisits30d))}</div></div>
+      <div class="ch-metric"><div class="m-lbl">Profile visits</div><div class="m-val">${st.profileVisits30d == null ? pendingOr(null) : fmtNum(st.profileVisits30d)}</div></div>
       <div class="ch-metric"><div class="m-lbl">Top post</div><div class="m-val" style="font-size:11px;line-height:1.35;font-weight:500">${top}</div></div>
       <div class="ch-metric"><div class="m-lbl">As of</div><div class="m-val" style="font-size:12px">${st.asOf || '—'}</div></div>
     </div>
@@ -578,10 +592,12 @@ function renderSocial(){
   const hasFollowers = fb.followers != null || ig.followers != null;
   const hasViews = fb.views30d != null || ig.views30d != null;
 
+  const posts30 = [fb.postsPublished30d, ig.postsPublished30d].filter(v => v != null).reduce((a,b)=>a+b, 0);
+  const hasPosts = fb.postsPublished30d != null || ig.postsPublished30d != null;
   $('socialKpis').innerHTML = [
     kpiCard('Total followers', hasFollowers ? fmtNum(totalFollowers) : 'Pending', 'FB + IG (known channels)', 'green'),
-    kpiCard('Views 30d', hasViews ? fmtNum(totalViews) : 'Pending', fb.viewsChange30dPct != null ? `FB ${fb.viewsChange30dPct}% vs prior` : 'Page + post views', 'accent'),
-    kpiCard('Posts 30d', fb.postsPublished30d == null ? 'Pending' : fmtNum(fb.postsPublished30d), 'Facebook Page (Buffer)', 'purple'),
+    kpiCard('Views 30d', hasViews ? fmtNum(totalViews) : 'Pending', `FB ${fmtNum(fb.views30d)} + IG ${fmtNum(ig.views30d)}`, 'accent'),
+    kpiCard('Posts 30d', hasPosts ? fmtNum(posts30) : 'Pending', `FB ${fmtNum(fb.postsPublished30d)} + IG ${fmtNum(ig.postsPublished30d)}`, 'purple'),
     kpiCard('Scheduled ahead', fmtNum(s.nationwidePostsScheduled), 'Buffer queue', 'amber')
   ].join('');
 
@@ -610,9 +626,20 @@ function renderSocial(){
     </div>
     <p style="margin-top:12px;color:var(--muted);font-size:12px;line-height:1.45">${refStatus}. ${ref.note || ''}</p>`;
 
+  const igLive = (stats.instagram && (stats.instagram.followers != null || stats.instagram.views30d != null));
+  const igUrl = s.instagramUrl || (igLive ? 'https://www.instagram.com/benefitboost.us/' : null);
+  const igLabel = s.instagramHandle || '@benefitboost.us';
+  const igSub = igUrl
+    ? `<a href="${igUrl}" target="_blank" rel="noopener" style="color:var(--accent)">${igLabel}</a>${s.instagramDisplayName ? ' · ' + s.instagramDisplayName : ''}`
+    : igLabel;
+  const combined = s.combined || {};
+  const combinedLine = combined.followers != null
+    ? `<div class="row" style="margin-top:8px"><div><div class="row-title">Combined FB + IG</div><div class="row-sub">${fmtNum(combined.followers)} followers · ${fmtNum(combined.views30d)} views / 30d</div></div><span class="pill accent">TOTAL</span></div>`
+    : '';
   $('socialDetails').innerHTML = `
     <div class="row"><div><div class="row-title">Facebook Page</div><div class="row-sub"><a href="${s.facebookPage}" target="_blank" rel="noopener" style="color:var(--accent)">${s.facebookPage}</a></div></div><span class="pill good">LIVE</span></div>
-    <div class="row" style="margin-top:8px"><div><div class="row-title">Instagram</div><div class="row-sub">${s.instagramHandle}</div></div><span class="pill warn">PENDING · FROM PHONE</span></div>
+    <div class="row" style="margin-top:8px"><div><div class="row-title">Instagram</div><div class="row-sub">${igSub}</div></div><span class="pill ${igLive ? 'good' : 'warn'}">${igLive ? 'LIVE' : 'PENDING'}</span></div>
+    ${combinedLine}
     <div class="row" style="margin-top:8px"><div><div class="row-title">Content mix</div><div class="row-sub">${s.contentMixRule}</div></div><span class="pill accent">POLICY</span></div>
     <p style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5">${s.note || ''}</p>`;
 

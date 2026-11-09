@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Miami Metro \u00b7 BenefitBoost Mission Control",
+    "title": "Miami Metro · BenefitBoost Mission Control",
     "brand": "Miami Metro LLC",
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-09T10:40:00-05:00",
+    "updatedAt": "2026-11-09T10:42:00-05:00",
     "dataWindow": {
       "from": "2026-11-05",
       "to": "2026-11-09",
-      "label": "Nov 5\u20139, 2026 \u00b7 campaign launch window",
+      "label": "Nov 5–9, 2026 · campaign launch window",
       "granularity": "daily"
     },
-    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows. Daily job also refreshes social.stats (Buffer Facebook) and appends socialDaily[]; Instagram stays Pending from Javier's phone; GA4 social referrals stay Not connected yet until API access."
+    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
   },
   "budgets": {
     "dailyTotalUsd": 30,
@@ -143,7 +143,7 @@
         "impressions": null,
         "clicks": null,
         "costUsd": null,
-        "status": "Enabled \u00b7 Eligible (Learning) \u00b7 day in progress"
+        "status": "Enabled · Eligible (Learning) · day in progress"
       },
       {
         "date": "2026-11-09",
@@ -151,7 +151,7 @@
         "impressions": null,
         "clicks": null,
         "costUsd": null,
-        "status": "Enabled \u00b7 Eligible (Learning) \u00b7 keywords pending review"
+        "status": "Enabled · Eligible (Learning) · keywords pending review"
       }
     ]
   },
@@ -208,12 +208,12 @@
       },
       {
         "partner": "Tello",
-        "status": "Draft ready \u2014 Javier to send to affiliate@tello.com",
+        "status": "Draft ready — Javier to send to affiliate@tello.com",
         "date": "2026-11-09"
       },
       {
         "partner": "Xfinity Residential",
-        "status": "Draft ready \u2014 Javier to send to Xfinity_Affiliate@cj.com",
+        "status": "Draft ready — Javier to send to Xfinity_Affiliate@cj.com",
         "date": "2026-11-09"
       }
     ],
@@ -223,11 +223,11 @@
   "social": {
     "facebookPage": "https://www.facebook.com/profile.php?id=61596397852467",
     "facebookPageAlt": "https://facebook.com/1405508039317703",
-    "instagramHandle": "@benefitboost.us (confirm vs @benefitboost.app)",
+    "instagramHandle": "@benefitboost.us",
     "contentMixRule": "About 75% nationwide; state spotlights rotate (CA, TX, FL, NY, etc.)",
     "nationwidePostsPrepared": 6,
     "nationwidePostsScheduled": 4,
-    "note": "Facebook Page views/followers from Professional dashboard Insights (Oct 10\u2013Nov 8, asOf Nov 9). Posts published + scheduled from Buffer (BenefitBoost Page only). Reach, link clicks, Page visits, follower deltas not shown \u2192 Pending. Instagram stats come from Javier's phone \u2014 never log into IG from the box. GA4 social referrals stay Not connected yet. Content mix: ~75% nationwide.",
+    "note": "Facebook Page views/followers from Professional dashboard Insights (Oct 10–Nov 8, asOf Nov 9). Posts published + scheduled from Buffer (BenefitBoost Page only). Reach, link clicks, Page visits, follower deltas not shown → Pending. Instagram @benefitboost.us filled Nov 9 from Instagram Professional dashboard (Last 30 days) in the BenefitBoost Chrome profile. GA4 social referrals stay Not connected yet. Content mix: ~75% nationwide.",
     "stats": {
       "facebook": {
         "followers": 1,
@@ -252,8 +252,8 @@
           "url": null
         },
         "asOf": "2026-11-09",
-        "source": "facebook.com/professional_dashboard/profile_insights/views/ (range Oct 10\u2013Nov 8, 2026) + Buffer list_posts for postsPublished30d/scheduledAhead",
-        "status": "partial \u2014 reach, link clicks, Page visits, follower deltas Pending (not shown in Insights)",
+        "source": "facebook.com/professional_dashboard/profile_insights/views/ (range Oct 10–Nov 8, 2026) + Buffer list_posts for postsPublished30d/scheduledAhead",
+        "status": "partial — reach, link clicks, Page visits, follower deltas Pending (not shown in Insights)",
         "viewsChange30dPct": 100,
         "views3s30d": 9,
         "views1m30d": 0,
@@ -263,25 +263,44 @@
         "postsPublished30dNote": "10+ on Facebook Professional dashboard; Buffer sent-count for BenefitBoost Page = 10"
       },
       "instagram": {
-        "followers": null,
-        "followersChange7d": null,
-        "followersChange30d": null,
+        "handle": "@benefitboost.us",
+        "displayName": "BenefitBoost | SNAP Help",
+        "profileUrl": "https://www.instagram.com/benefitboost.us/",
+        "followers": 23,
+        "following": 308,
+        "posts": 12,
+        "followersChange7d": "Not shown — tracking starts today",
+        "followersChange30d": "Not shown — tracking starts today",
+        "followersBaseline": 23,
         "reach30d": null,
-        "views30d": null,
-        "interactions30d": null,
-        "reactions30d": null,
-        "comments30d": null,
-        "shares30d": null,
-        "engagementRate30d": null,
-        "linkClicks30d": null,
-        "postsPublished30d": null,
-        "profileVisits30d": null,
-        "avgImpressionsPerPost30d": null,
+        "viewers30d": 23,
+        "views30d": 92,
+        "viewsFromFollowersPct": 54.3,
+        "viewsFromNonFollowersPct": 45.7,
+        "viewsFromPostsPct": 80.4,
+        "viewsFromReelsPct": 19.5,
+        "accountsEngaged30d": 1,
+        "interactions30d": 1,
+        "reactions30d": 0,
+        "comments30d": 0,
+        "shares30d": 0,
+        "engagementRate30d": 4.35,
+        "linkClicks30d": "Not shown on desktop",
+        "linkTapsTopPosts": 0,
+        "postsPublished30d": 12,
+        "profileVisits30d": 112,
+        "avgImpressionsPerPost30d": 7.7,
         "scheduledAhead": null,
-        "topPost30d": null,
-        "asOf": null,
-        "source": "Pending \u2014 from Javier's phone (do not log into Instagram from the box)",
-        "status": "Pending \u2014 from Javier's phone"
+        "topPost30d": {
+          "title": "Know your SNAP deposit date",
+          "date": "2026-11-03",
+          "views": 18,
+          "likes": 0,
+          "url": "https://www.instagram.com/benefitboost.us/p/DfTAKT3s_eS/"
+        },
+        "asOf": "2026-11-09",
+        "source": "Instagram Professional dashboard Insights · Last 30 days · @benefitboost.us (BenefitBoost Chrome profile, Nov 9 2026)",
+        "status": "live — followers/views/viewers/profile visits filled; follower deltas baseline set today; account-level link taps not shown on desktop"
       },
       "pinterest": {
         "followers": null,
@@ -302,7 +321,7 @@
         "topPost30d": null,
         "asOf": null,
         "source": "Future slot",
-        "status": "Pending \u2014 channel not connected"
+        "status": "Pending — channel not connected"
       },
       "reddit": {
         "followers": null,
@@ -323,7 +342,7 @@
         "topPost30d": null,
         "asOf": null,
         "source": "Future slot",
-        "status": "Pending \u2014 channel not connected"
+        "status": "Pending — channel not connected"
       },
       "x": {
         "followers": null,
@@ -344,7 +363,7 @@
         "topPost30d": null,
         "asOf": null,
         "source": "Future slot",
-        "status": "Pending \u2014 channel not connected"
+        "status": "Pending — channel not connected"
       }
     },
     "siteReferrals": {
@@ -404,9 +423,41 @@
         "followers": 1,
         "views": 43,
         "note": "FB Professional dashboard snapshot: followers=1, views30d=43"
+      },
+      {
+        "date": "2026-11-09",
+        "channel": "instagram",
+        "followers": 23,
+        "views": 92,
+        "views30d": 92,
+        "note": "IG Professional dashboard snapshot: followers=23, views30d=92 (baseline)"
       }
     ],
     "topPosts": [
+      {
+        "channel": "instagram",
+        "title": "Know your SNAP deposit date",
+        "date": "2026-11-03",
+        "views": 18,
+        "likes": 0,
+        "url": "https://www.instagram.com/benefitboost.us/p/DfTAKT3s_eS/"
+      },
+      {
+        "channel": "instagram",
+        "title": "Stretch your EBT",
+        "date": "2026-11-03",
+        "views": 17,
+        "likes": 0,
+        "url": "https://www.instagram.com/benefitboost.us/p/DfTAF3Ysg01/"
+      },
+      {
+        "channel": "instagram",
+        "title": "Save on everyday costs",
+        "date": "2026-11-03",
+        "views": 14,
+        "likes": 0,
+        "url": "https://www.instagram.com/benefitboost.us/p/DfTAAqMsuyW/"
+      },
       {
         "channel": "facebook",
         "title": "Untitled post (no text)",
@@ -416,19 +467,27 @@
       },
       {
         "channel": "facebook",
-        "title": "Florida SNAP households: work requirements and recertification deadlines\u2026",
+        "title": "Florida SNAP households: work requirements and recertification deadlines…",
         "date": "2026-11-06",
         "views": 10,
         "url": null
       },
       {
         "channel": "facebook",
-        "title": "Florida SNAP deposits are spread across days 1\u201328 each month\u2026",
+        "title": "Florida SNAP deposits are spread across days 1–28 each month…",
         "date": "2026-11-07",
         "views": 7,
         "url": null
       }
-    ]
+    ],
+    "instagramUrl": "https://www.instagram.com/benefitboost.us/",
+    "instagramDisplayName": "BenefitBoost | SNAP Help",
+    "combined": {
+      "followers": 24,
+      "views30d": 135,
+      "asOf": "2026-11-09",
+      "note": "FB 1 follower / 43 views30d + IG 23 followers / 92 views30d"
+    }
   },
   "openQuestions": [
     {
@@ -445,19 +504,11 @@
     },
     {
       "priority": "medium",
-      "item": "Confirm Instagram handle (@benefitboost.us vs @benefitboost.app)"
+      "item": "Approve scheduling the 6 nationwide posts in Buffer (Facebook + Instagram @benefitboost.us when Buffer IG channel exists)"
     },
     {
       "priority": "medium",
-      "item": "Approve scheduling the 6 nationwide posts in Buffer (Facebook) + IG from phone"
-    },
-    {
-      "priority": "medium",
-      "item": "Provide Facebook Page followers + 30-day reach / profile visits (Insights) so Mission Control can fill remaining FB fields"
-    },
-    {
-      "priority": "medium",
-      "item": "Send Instagram followers, 30-day views/reach, and profile visits from phone Insights (@benefitboost.us)"
+      "item": "Fill remaining Facebook Insights gaps (reach, link clicks, Page visits, follower deltas) when dashboard shows them"
     }
   ],
   "links": [
@@ -484,9 +535,17 @@
     {
       "label": "Facebook Page",
       "url": "https://www.facebook.com/profile.php?id=61596397852467"
+    },
+    {
+      "label": "Instagram @benefitboost.us",
+      "url": "https://www.instagram.com/benefitboost.us/"
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-09",
+      "summary": "Instagram @benefitboost.us baseline from Professional dashboard (Last 30 days): 23 followers, 92 views, 23 viewers, 112 profile visits, 1 interaction (4.35% eng. rate), top post 18 views. Combined social: 24 followers / 135 views30d. Follower-delta tracking starts today."
+    },
     {
       "date": "2026-11-09",
       "summary": "Social stats: Facebook Professional dashboard Insights filled (1 follower, 43 views / 30d, +100% views, 10+ posts). Reach/link clicks/Page visits Pending. Instagram still from Javier's phone."

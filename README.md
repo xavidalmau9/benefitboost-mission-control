@@ -35,7 +35,7 @@ Commit and push to `main`. GitHub Pages redeploys in about a minute via `.github
 | `siteTraffic` | GA4 id, Search Console status, `metrics` (null until connected) |
 | `affiliates` | CJ CID, joined count, `pending[]`, `declined[]`, `winBacks[]`, Impact, Lifeline partner |
 | `social` | Channel URLs/handles, mix rule, prepared/scheduled counts, **`stats`**, **`socialDaily[]`**, **`topPosts[]`**, **`siteReferrals`** |
-| `social.stats.<channel>` | Per channel (`facebook`, `instagram`, plus slots `pinterest`, `reddit`, `x`): `followers`, `followersChange7d`, `followersChange30d`, `reach30d`, `views30d`, `viewsChange30dPct`, `views3s30d`, `views1m30d`, `watchTime30d`, `viewsFromNonFollowersPct` / `viewsFromFollowersPct`, `interactions30d`, `reactions30d`, `comments30d`, `shares30d`, `engagementRate30d`, `linkClicks30d`, `postsPublished30d`, `profileVisits30d`, `avgImpressionsPerPost30d`, `scheduledAhead`, `topPost30d` `{title,date,views,url}`, `asOf`, `source`, `status` |
+| `social.stats.<channel>` | Per channel (`facebook`, `instagram`, plus slots `pinterest`, `reddit`, `x`): `followers`, `followersChange7d`, `followersChange30d`, `reach30d` / `viewers30d` (IG), `views30d`, `viewsChange30dPct`, `views3s30d`, `views1m30d`, `watchTime30d`, `viewsFromNonFollowersPct` / `viewsFromFollowersPct`, `interactions30d`, `reactions30d`, `comments30d`, `shares30d`, `engagementRate30d`, `linkClicks30d`, `postsPublished30d`, `profileVisits30d`, `avgImpressionsPerPost30d`, `scheduledAhead`, `topPost30d` `{title,date,views,url}`, `asOf`, `source`, `status` |
 | `social.socialDaily[]` | `{date, channel, followers, views}` history for trend charts (daily job appends) |
 | `social.topPosts[]` | Top posts last 30d: `{channel, title, date, views, url}` |
 | `social.siteReferrals` | GA4 facebook/instagram sessions → site; stays *Not connected yet* until Analytics access |
@@ -51,7 +51,7 @@ Commit and push to `main`. GitHub Pages redeploys in about a minute via `.github
 4. If GA4 / Search Console access exists, fill `siteTraffic.metrics`; otherwise leave *Not connected yet*.
 5. Refresh CJ pending/declined/joined when checked.
 6. **Social (Facebook):** refresh `social.stats.facebook` from Facebook Professional dashboard Insights (followers, views30d, engagement) and Buffer (`list_posts` / `get_aggregated_post_metrics` on the BenefitBoost Facebook Page only) for `postsPublished30d` and `scheduledAhead`. Append `{date, channel:"facebook", followers, views}` to `social.socialDaily`. Update `social.topPosts`. Leave `reach30d`, `linkClicks30d`, and `profileVisits30d` null/`Pending` when Insights does not show them.
-7. **Social (Instagram):** do **not** log into Instagram from the box. Leave `social.stats.instagram` as `Pending — from Javier's phone` until Javier supplies phone Insights (followers, views/reach, profile visits).
+7. **Social (Instagram):** refresh `social.stats.instagram` from Instagram Professional dashboard (Last 30 days) for `@benefitboost.us` in the **BenefitBoost** Chrome profile only (never the default/aifeed profile). Fill followers, views30d, viewers30d (IG shows Viewers instead of reach), profileVisits30d, interactions30d / engagementRate30d, topPosts. Append `{date, channel:"instagram", followers, views}` (also `views30d` when snapshotting) to `social.socialDaily`. Follower deltas: after the Nov 9 baseline of 23, compute 7d/30d from prior `socialDaily` rows; until history exists keep the note `Not shown — tracking starts today`. Account-level link taps often not shown on desktop → store `"Not shown on desktop"`. Update `social.combined` (FB+IG totals).
 8. **Social referrals:** if GA4 access exists, fill `social.siteReferrals.facebookSessions30d` / `instagramSessions30d` (sessionSource facebook/instagram); otherwise keep *Not connected yet*.
 9. Push `data.json` to `main`.
 
@@ -60,7 +60,7 @@ Commit and push to `main`. GitHub Pages redeploys in about a minute via `.github
 | Field | Why we track it |
 |---|---|
 | `followers` + 7d/30d change | Audience growth — are nationwide posts actually adding people? |
-| `views30d` / `reach30d` | Distribution health (views = impressions; reach = unique people when Insights shows it) |
+| `views30d` / `reach30d` / `viewers30d` | Distribution health (views = impressions; reach or IG Viewers = unique people) |
 | `interactions30d` + `engagementRate30d` | Content quality — views without engagement mean weak creative or targeting |
 | `linkClicks30d` | Mid-funnel action on-platform (still not the same as site sessions) |
 | `postsPublished30d` + `scheduledAhead` | Cadence vs the 75% nationwide mix rule |
