@@ -5,14 +5,14 @@
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-09T10:42:00-05:00",
+    "updatedAt": "2026-11-10T10:20:00-05:00",
     "dataWindow": {
       "from": "2026-11-05",
       "to": "2026-11-09",
-      "label": "Nov 5–9, 2026 · campaign launch window",
+      "label": "Nov 5–9, 2026 · Ads month to date through Nov 10 morning",
       "granularity": "daily"
     },
-    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4/Search Console metrics stay 'Not connected yet' until API access is granted. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
+    "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4 and Search Console are read from the dashboards by the daily check. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
   },
   "budgets": {
     "dailyTotalUsd": 30,
@@ -27,8 +27,8 @@
       "campaignId": "24448608398",
       "name": "BenefitBoost - US SNAP Deposit Dates - Search",
       "status": "Enabled",
-      "eligibility": "Eligible (Learning)",
-      "asOf": "2026-11-09",
+      "eligibility": "Eligible (Learning) · Bid strategy learning",
+      "asOf": "2026-11-10",
       "dailyBudgetUsd": 20,
       "bidding": "Maximize clicks",
       "maxCpcUsd": 0.1,
@@ -38,26 +38,29 @@
       "keywords": {
         "count": 16,
         "matchType": "Phrase",
-        "reviewStatus": "Pending review"
+        "eligible": 14,
+        "lowSearchVolume": 2,
+        "reviewStatus": "Approved · 14 Eligible (low Ad Rank, 0 impressions) · 2 Low search volume"
       },
       "negatives": 25,
       "rsa": {
         "headlines": 15,
         "descriptions": 4,
-        "strength": "Good",
-        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule"
+        "strength": "Poor",
+        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule",
+        "approval": "Eligible"
       },
       "colorKey": "green",
       "hex": "#34d399",
-      "notes": "Primary nationwide Search campaign. Keywords pending Google review (usually up to 1 day)."
+      "notes": "Primary nationwide Search campaign. Keywords approved Nov 10 but not serving yet: Google shows low Ad Rank at the $0.10 cap."
     },
     {
       "id": "florida",
       "campaignId": "24438311912",
       "name": "BenefitBoost - Florida SNAP Dates - Search",
       "status": "Enabled",
-      "eligibility": "Eligible (Learning)",
-      "asOf": "2026-11-09",
+      "eligibility": "Eligible (Learning) · Bid strategy learning",
+      "asOf": "2026-11-10",
       "dailyBudgetUsd": 10,
       "bidding": "Maximize clicks",
       "maxCpcUsd": 0.1,
@@ -68,12 +71,13 @@
         "exact": 3,
         "phrase": 3,
         "lowSearchVolume": 3,
-        "reviewStatus": "Approved / Low search volume on 3"
+        "reviewStatus": "3 Eligible · 3 Low search volume"
       },
       "negatives": 16,
       "rsa": {
-        "strength": "Poor (earlier) / keep monitoring",
-        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule/florida"
+        "strength": "Poor",
+        "finalUrl": "https://getbenefitboost.com/snap-deposit-schedule/florida",
+        "approval": "Eligible"
       },
       "colorKey": "accent",
       "hex": "#38bdf8",
@@ -82,7 +86,7 @@
   ],
   "adsMetrics": {
     "awaitingData": false,
-    "throughDate": "2026-11-08",
+    "throughDate": "2026-11-09",
     "totals": {
       "impressions": 0,
       "clicks": 0,
@@ -95,13 +99,13 @@
         "impressions": 0,
         "clicks": 0,
         "costUsd": 0,
-        "note": "Published Nov 9; no serve window yet through Nov 8"
+        "note": "Month to date Nov 1–10: 0 impressions. 14 of 16 keywords Eligible but not showing (low Ad Rank at $0.10 cap); 2 Low search volume. No search terms yet. RSA Eligible, ad strength Poor."
       },
       "florida": {
         "impressions": 0,
         "clicks": 0,
         "costUsd": 0,
-        "note": "Enabled; low-volume keywords + $0.10 cap limit auctions"
+        "note": "Month to date Nov 1–10: 0 impressions. 3 of 6 keywords Eligible, 3 Low search volume. RSA Eligible, ad strength Poor."
       }
     },
     "dailyRows": [
@@ -141,32 +145,130 @@
         "date": "2026-11-09",
         "campaign": "florida",
         "impressions": null,
-        "clicks": null,
-        "costUsd": null,
-        "status": "Enabled · Eligible (Learning) · day in progress"
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Eligible (Learning) · Bid strategy learning · impressions column not shown for yesterday; 0 for month"
       },
       {
         "date": "2026-11-09",
         "campaign": "nationwide",
         "impressions": null,
-        "clicks": null,
-        "costUsd": null,
-        "status": "Enabled · Eligible (Learning) · keywords pending review"
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Eligible (Learning) · Bid strategy learning · impressions column not shown for yesterday; 0 for month"
       }
     ]
   },
   "siteTraffic": {
     "ga4MeasurementId": "G-GX501BDC70",
-    "searchConsole": "Verified in site code",
-    "status": "Not connected yet",
-    "note": "Tag and Search Console verification exist on getbenefitboost.com. Live metrics require GA4/Search Console API (or export) access for the daily job.",
+    "searchConsole": "Verified (URL prefix https://getbenefitboost.com/)",
+    "status": "Connected (read from dashboards)",
+    "asOf": "2026-11-10",
+    "note": "GA4 shows 15 Paid Search sessions (0 engaged) while Google Ads shows 0 clicks; Ads reporting may lag or traffic came from elsewhere. GA4 region report unavailable this run. Search Console data covers Oct 28–Nov 8.",
     "metrics": {
-      "sessions": null,
-      "users": null,
-      "pageviews": null,
-      "topPages": [],
-      "organicClicks": null,
-      "organicImpressions": null
+      "users": 20,
+      "sessions": 20,
+      "pageviews": 20,
+      "window": "Last 7 days (Nov 3–9)",
+      "users28d": 22,
+      "sessions28d": 22,
+      "pageviews28d": 24,
+      "engagementRate28dPct": 9.09,
+      "channels7d": {
+        "Paid Search": 15,
+        "Direct": 5
+      },
+      "channels28d": {
+        "Paid Search": 15,
+        "Direct": 7
+      },
+      "topPages": [
+        {
+          "path": "/guides/florida-snap-deposit-schedule",
+          "views": 10
+        },
+        {
+          "path": "/",
+          "views": 5
+        },
+        {
+          "path": "/snap-deposit-schedule",
+          "views": 5
+        }
+      ],
+      "topStates": "Unavailable this run",
+      "organicClicks": 2,
+      "organicImpressions": 1040,
+      "organicCtrPct": 0.2,
+      "avgPosition": 13.5,
+      "organicWindow": "Oct 28–Nov 8",
+      "queriesCount": 171,
+      "pagesWithImpressions": 24,
+      "topQueries": [
+        {
+          "query": "ebt deposit dates",
+          "clicks": 1,
+          "impressions": 14
+        },
+        {
+          "query": "ebt calendar",
+          "clicks": 0,
+          "impressions": 53
+        },
+        {
+          "query": "ebt schedule",
+          "clicks": 0,
+          "impressions": 36
+        },
+        {
+          "query": "ebt calender",
+          "clicks": 0,
+          "impressions": 11
+        },
+        {
+          "query": "when do i get my food stamps each month",
+          "clicks": 0,
+          "impressions": 7
+        },
+        {
+          "query": "snap calendar",
+          "clicks": 0,
+          "impressions": 7
+        }
+      ],
+      "topSearchPages": [
+        {
+          "path": "/ebt-schedule/new-york",
+          "clicks": 1,
+          "impressions": 288
+        },
+        {
+          "path": "/ebt-schedule/florida",
+          "clicks": 0,
+          "impressions": 263
+        },
+        {
+          "path": "/guides/florida-snap-deposit-schedule",
+          "clicks": 0,
+          "impressions": 153
+        },
+        {
+          "path": "/snap-deposit-schedule/connecticut",
+          "clicks": 1,
+          "impressions": 50
+        },
+        {
+          "path": "/benefits",
+          "clicks": 0,
+          "impressions": 40
+        }
+      ],
+      "indexedPages": 39,
+      "notIndexedPages": 103,
+      "notIndexedReasons": {
+        "Discovered - currently not indexed": 102,
+        "Crawled - currently not indexed": 1
+      }
     }
   },
   "affiliates": {
@@ -492,15 +594,15 @@
   "openQuestions": [
     {
       "priority": "high",
+      "item": "Ads not serving at $0.10 max CPC (low Ad Rank, 0 impressions). Decide whether to keep the cap or test a higher one."
+    },
+    {
+      "priority": "high",
       "item": "Send Tello reconsideration email (affiliate@tello.com) with media kit"
     },
     {
       "priority": "high",
       "item": "Send Xfinity Residential reconsideration email (Xfinity_Affiliate@cj.com)"
-    },
-    {
-      "priority": "high",
-      "item": "Grant GA4 + Search Console access so daily dashboard can show real site traffic"
     },
     {
       "priority": "medium",
@@ -542,6 +644,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-10",
+      "summary": "Daily check: both campaigns Eligible (Learning), 0 impressions / $0 month to date; nationwide keywords approved (14 Eligible, 2 Low search volume) but low Ad Rank at the $0.10 cap. Site traffic now filled: GA4 20 users / 20 sessions (7d), Search Console 1.04K impressions / 2 clicks, 39 pages indexed, 102 discovered not indexed. CJ not refreshed (sign-in needed)."
+    },
     {
       "date": "2026-11-09",
       "summary": "Instagram @benefitboost.us baseline from Professional dashboard (Last 30 days): 23 followers, 92 views, 23 viewers, 112 profile visits, 1 interaction (4.35% eng. rate), top post 18 views. Combined social: 24 followers / 135 views30d. Follower-delta tracking starts today."
