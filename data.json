@@ -5,11 +5,11 @@
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-14T10:20:00-05:00",
+    "updatedAt": "2026-11-15T10:00:00-05:00",
     "dataWindow": {
-      "from": "2026-11-07",
-      "to": "2026-11-13",
-      "label": "GA4 Nov 7–13 · Ads month to date Nov 1–14 · Search Console last 3 months",
+      "from": "2026-11-08",
+      "to": "2026-11-14",
+      "label": "GA4 Nov 8–14 · Ads month to date Nov 1–15 · Search Console last 3 months",
       "granularity": "daily"
     },
     "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4 and Search Console are read from the dashboards by the daily check. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
@@ -28,7 +28,7 @@
       "name": "BenefitBoost - US SNAP Deposit Dates - Search",
       "status": "Enabled",
       "eligibility": "Eligible (Learning) · Bid strategy learning",
-      "asOf": "2026-11-14",
+      "asOf": "2026-11-15",
       "dailyBudgetUsd": 10,
       "bidding": "Maximize clicks",
       "maxCpcUsd": 0.1,
@@ -38,9 +38,9 @@
       "keywords": {
         "count": 128,
         "matchType": "Mixed (Nov 12 restructure)",
-        "eligible": 92,
-        "lowSearchVolume": 21,
-        "reviewStatus": "92 Eligible · 36 Not eligible (17 rarely served, 15 paused ad group, 4 both) · 0 impressions"
+        "eligible": 93,
+        "lowSearchVolume": 20,
+        "reviewStatus": "93 Eligible · 35 Not eligible (16 low search volume, 15 paused ad group, 4 both) · 0 impressions"
       },
       "negatives": 25,
       "rsa": {
@@ -51,7 +51,7 @@
       },
       "colorKey": "green",
       "hex": "#34d399",
-      "notes": "Still 0 impressions through Nov 13 at the $0.10 cap. $10/day shown in Ads UI; not changed by the daily check. Sitelinks now listed (6+ eligible)."
+      "notes": "Still 0 impressions through Nov 14 (and month to date) at the $0.10 cap. $10/day shown in Ads UI; not changed by the daily check. No search terms yet."
     },
     {
       "id": "florida",
@@ -59,7 +59,7 @@
       "name": "BenefitBoost - Florida SNAP Dates - Search",
       "status": "Enabled",
       "eligibility": "Eligible (Learning) · Bid strategy learning",
-      "asOf": "2026-11-14",
+      "asOf": "2026-11-15",
       "dailyBudgetUsd": 10,
       "bidding": "Maximize clicks",
       "maxCpcUsd": 0.1,
@@ -69,7 +69,7 @@
         "count": 26,
         "eligible": 4,
         "lowSearchVolume": 19,
-        "reviewStatus": "4 Eligible · 22 Not eligible (16 rarely served, 3 paused ad group, 3 both) · 0 impressions"
+        "reviewStatus": "4 Eligible · 22 Not eligible (16 low search volume, 3 paused ad group, 3 both) · 0 impressions"
       },
       "negatives": 16,
       "rsa": {
@@ -79,7 +79,7 @@
       },
       "colorKey": "accent",
       "hex": "#38bdf8",
-      "notes": "$10/day state spotlight. 0 impressions month to date; 15 of 26 keywords Low search volume."
+      "notes": "0 impressions through Nov 14 and month to date at the $0.10 cap. $10/day."
     }
   ],
   "adsMetrics": {
@@ -202,6 +202,22 @@
         "clicks": 0,
         "costUsd": 0,
         "status": "Eligible (Learning) · Bid strategy learning"
+      },
+      {
+        "date": "2026-11-14",
+        "campaign": "nationwide",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Eligible (Learning) · Bid strategy learning"
+      },
+      {
+        "date": "2026-11-14",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Eligible (Learning) · Bid strategy learning"
       }
     ]
   },
@@ -209,21 +225,22 @@
     "ga4MeasurementId": "G-GX501BDC70",
     "searchConsole": "Verified (URL prefix https://getbenefitboost.com/)",
     "status": "Connected (read from dashboards)",
-    "asOf": "2026-11-14",
-    "note": "GA4 Nov 7–13: 16 active users, 17 sessions, 16 new users, 0 key events not re-read. Paid Search 11 sessions while both Google Ads campaigns show 0 impressions and 0 clicks, so that paid traffic is not from these campaigns (source unverified). Nov 13 alone: 1 user, 2 Direct sessions. Regions mostly (not set); no named states. Search Console last 3 months, updated ~Nov 14.",
+    "asOf": "2026-11-15",
+    "note": "GA4 Nov 8–14: 42 users, 44 sessions, 44 new users, 43 views, 26 engaged sessions, 0 key events. Organic Social 25 sessions (Facebook posts working). Paid Search 12 sessions (0 engaged) while both Ads campaigns show 0 impressions, so that traffic is not from these campaigns (source unverified). Nov 14 alone: 3 users, 3 sessions. Regions: (not set) 14, Oregon 9; countries US 19, Ireland 4, Sweden 4. Search Console last 3 months (data through Nov 13).",
     "metrics": {
-      "users": 16,
-      "sessions": 17,
-      "pageviews": null,
-      "window": "Last 7 days (Nov 7–13)",
+      "users": 42,
+      "sessions": 44,
+      "pageviews": 43,
+      "window": "Last 7 days (Nov 8–14)",
       "users28d": 51,
       "sessions28d": 52,
       "pageviews28d": 53,
       "engagementRate28dPct": 46.15,
       "channels7d": {
-        "Paid Search": 11,
-        "Direct": 5,
-        "Cross-network": 1
+        "Organic Social": 25,
+        "Paid Search": 12,
+        "Direct": 6,
+        "Unassigned": 1
       },
       "channels28d": {
         "Cross-network": 23,
@@ -234,50 +251,74 @@
       },
       "topPages": [
         {
-          "path": "/snap-deposit-schedule",
-          "views": 7
-        },
-        {
           "path": "/",
-          "views": 5
+          "views": 10
         },
         {
-          "path": "/guides/florida-snap-deposit-schedule",
-          "views": 3
-        },
-        {
-          "path": "/guides/banking-and-credit-basics",
-          "views": 1
+          "path": "/snap-deposit-schedule",
+          "views": 6
         },
         {
           "path": "/guides/low-cost-internet-by-provider",
-          "views": 1
+          "views": 4
+        },
+        {
+          "path": "/what-else-do-i-qualify-for",
+          "views": 4
+        },
+        {
+          "path": "/ebt-groceries",
+          "views": 3
+        },
+        {
+          "path": "/guides",
+          "views": 3
+        },
+        {
+          "path": "/guides/free-tax-filing-eitc",
+          "views": 3
+        },
+        {
+          "path": "/guides/december-tax-prep-families",
+          "views": 2
         }
       ],
       "topStates": [
         {
           "region": "(not set)",
-          "users": 12
+          "users": 14
         },
         {
-          "region": "(not set)",
-          "users": 2
+          "region": "Oregon",
+          "users": 9
         },
         {
-          "region": "United States (country)",
-          "users": 2
+          "region": "County Dublin (Ireland)",
+          "users": 4
+        },
+        {
+          "region": "Norrbotten County (Sweden)",
+          "users": 4
+        },
+        {
+          "region": "Tennessee",
+          "users": 3
+        },
+        {
+          "region": "Texas",
+          "users": 3
         }
       ],
       "organicClicks": 3,
-      "organicImpressions": 1430,
+      "organicImpressions": 1900,
       "organicCtrPct": 0.2,
-      "avgPosition": 16.1,
-      "organicWindow": "Search Console last 3 months (updated ~Nov 14)",
+      "avgPosition": 18,
+      "organicWindow": "Search Console last 3 months (data Oct 28–Nov 13)",
       "topQueries": [
         {
           "query": "ebt deposit dates",
           "clicks": 1,
-          "impressions": 20
+          "impressions": 21
         },
         {
           "query": "cash assistance schedule 2026",
@@ -287,12 +328,22 @@
         {
           "query": "ebt calendar",
           "clicks": 0,
-          "impressions": 62
+          "impressions": 71
         },
         {
           "query": "ebt schedule",
           "clicks": 0,
-          "impressions": 43
+          "impressions": 50
+        },
+        {
+          "query": "food stamps calendar",
+          "clicks": 0,
+          "impressions": 27
+        },
+        {
+          "query": "low cost internet",
+          "clicks": 0,
+          "impressions": 15
         },
         {
           "query": "ebt calender",
@@ -302,27 +353,17 @@
         {
           "query": "when do i get my food stamps each month",
           "clicks": 0,
+          "impressions": 12
+        },
+        {
+          "query": "low cost wifi",
+          "clicks": 0,
+          "impressions": 11
+        },
+        {
+          "query": "acp internet providers",
+          "clicks": 0,
           "impressions": 10
-        },
-        {
-          "query": "when does ebt hit",
-          "clicks": 0,
-          "impressions": 7
-        },
-        {
-          "query": "snap calendar",
-          "clicks": 0,
-          "impressions": 7
-        },
-        {
-          "query": "when does cash assistance get deposited",
-          "clicks": 0,
-          "impressions": 6
-        },
-        {
-          "query": "when does ebt refill",
-          "clicks": 0,
-          "impressions": 6
         }
       ],
       "topSearchPages": [
@@ -357,13 +398,27 @@
       "notIndexedReasons": {
         "Discovered - currently not indexed": 99,
         "Crawled - currently not indexed": 4
+      },
+      "organic7d": {
+        "window": "Nov 7–13",
+        "clicks": 1,
+        "impressions": 1030,
+        "ctrPct": 0.1,
+        "avgPosition": 22.3
+      },
+      "indexing": {
+        "indexed": 43,
+        "notIndexed": 103,
+        "discoveredNotIndexed": 99,
+        "crawledNotIndexed": 4,
+        "sitemapLastRead": "2026-11-08"
       }
     }
   },
   "affiliates": {
     "network": "CJ Affiliate",
     "publisherCid": "8113194",
-    "asOf": "2026-11-13",
+    "asOf": "2026-11-15",
     "joined": 0,
     "pending": [
       "AirTalk",
@@ -377,7 +432,9 @@
       "Verizon",
       "Verizon Home Internet",
       "Walgreens",
-      "Xfinity Mobile"
+      "Xfinity Mobile",
+      "Dell Refurbished",
+      "DentalPlans.com"
     ],
     "declined": [
       "BJ's Memberships",
@@ -399,8 +456,8 @@
       },
       {
         "partner": "Tello",
-        "status": "Draft ready — Javier to send to affiliate@tello.com",
-        "date": "2026-11-09"
+        "status": "Sent to affiliate@tello.com",
+        "date": "2026-11-13"
       },
       {
         "partner": "Xfinity Residential",
@@ -684,7 +741,7 @@
   "openQuestions": [
     {
       "priority": "high",
-      "item": "Ads still 0 impressions Nov 1–14 (US 92 eligible keywords, 10 eligible RSAs across both campaigns, sitelinks present). The $0.10 max CPC is the likely blocker. Decide: raise the cap, or keep it and accept no paid traffic."
+      "item": "Ads still 0 impressions Nov 1–15 (US 93 eligible keywords, 10 eligible RSAs across both campaigns, no search terms). The $0.10 max CPC is the likely blocker. Decide: raise the cap, or keep it and accept no paid traffic."
     },
     {
       "priority": "medium",
@@ -692,11 +749,7 @@
     },
     {
       "priority": "medium",
-      "item": "GA4 shows 11 Paid Search sessions (Nov 7–13) but our Ads campaigns have 0 clicks. Check for another source tagging traffic as paid."
-    },
-    {
-      "priority": "high",
-      "item": "Send Tello reconsideration email (affiliate@tello.com) with media kit"
+      "item": "GA4 shows 12 Paid Search sessions (Nov 8–14, 0 engaged) but our Ads campaigns have 0 clicks. Check for another source tagging traffic as paid."
     },
     {
       "priority": "high",
@@ -709,6 +762,10 @@
     {
       "priority": "medium",
       "item": "Fill remaining Facebook Insights gaps (reach, link clicks, Page visits, follower deltas) when dashboard shows them"
+    },
+    {
+      "priority": "medium",
+      "item": "Search Console: 99 pages Discovered – currently not indexed and the sitemap was last read Nov 8. Resubmit the sitemap and request indexing for top state schedule pages."
     }
   ],
   "links": [
@@ -742,6 +799,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-15",
+      "summary": "Daily check: both campaigns Eligible (Learning), $10/day each, 0 impressions / 0 clicks / $0 for Nov 14 and month to date; no search terms. Keywords: US 93 of 128 Eligible, Florida 4 of 26. RSAs Eligible (US 8, FL 2). GA4 Nov 8–14: 42 users / 44 sessions (25 Organic Social; 12 Paid Search not from these campaigns). Search Console 3 months: 3 clicks / 1.9K impressions, position 18; 43 indexed, 103 not indexed. CJ: Dell Refurbished and DentalPlans applied (pending)."
+    },
     {
       "date": "2026-11-14",
       "summary": "Daily check: both campaigns Eligible (Learning), $10/day each, 0 impressions / 0 clicks / $0 for Nov 13 and month to date; no search terms. Keywords: US 92 of 128 Eligible, Florida 4 of 26. RSAs Eligible (US 8, FL 2); 6+ sitelinks listed. GA4 Nov 7–13: 16 users / 17 sessions (11 Paid Search not from these campaigns). Search Console 3 months: 3 clicks / 1.43K impressions, position 16.1; 43 indexed, 103 not indexed."
