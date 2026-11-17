@@ -5,7 +5,7 @@
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-15T10:00:00-05:00",
+    "updatedAt": "2026-11-17T10:07:00-05:00",
     "dataWindow": {
       "from": "2026-11-08",
       "to": "2026-11-14",
@@ -799,6 +799,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-17",
+      "summary": "Daily check: browser was busy with another BenefitBoost job for 15+ minutes, so Google Ads, GA4 and Search Console were not read today. No new numbers; the last data shown is from Nov 15 (Nov 16 check also missed). Ads data for Nov 15 and 16 still to be filled."
+    },
     {
       "date": "2026-11-15",
       "summary": "Daily check: both campaigns Eligible (Learning), $10/day each, 0 impressions / 0 clicks / $0 for Nov 14 and month to date; no search terms. Keywords: US 93 of 128 Eligible, Florida 4 of 26. RSAs Eligible (US 8, FL 2). GA4 Nov 8–14: 42 users / 44 sessions (25 Organic Social; 12 Paid Search not from these campaigns). Search Console 3 months: 3 clicks / 1.9K impressions, position 18; 43 indexed, 103 not indexed. CJ: Dell Refurbished and DentalPlans applied (pending)."
