@@ -5,11 +5,11 @@
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-24T07:55:00-05:00",
+    "updatedAt": "2026-11-25T07:50:00-05:00",
     "dataWindow": {
       "from": "2026-10-28",
-      "to": "2026-11-24",
-      "label": "GA4 last 7 days Nov 17-23 · Ads month to date Nov 1-24 · Search Console last 7/28 days (through Nov 24)",
+      "to": "2026-11-25",
+      "label": "GA4 last 7 days Nov 18-24 · Ads month to date Nov 1-25 · Search Console last 28 days (through Nov 23)",
       "granularity": "daily"
     },
     "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4 and Search Console are read from the dashboards by the daily check. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
@@ -28,7 +28,7 @@
       "name": "BenefitBoost - US Search",
       "status": "Enabled",
       "eligibility": "Eligible (Learning) · Bid strategy learning",
-      "asOf": "2026-11-24",
+      "asOf": "2026-11-25",
       "dailyBudgetUsd": 10,
       "bidding": "Maximize clicks (max CPC limit $0.20)",
       "maxCpcUsd": 0.2,
@@ -36,22 +36,22 @@
       "network": "Search only",
       "language": "English (unconfirmed in UI after publish)",
       "keywords": {
-        "count": 234,
+        "count": 238,
         "matchType": "Mixed",
         "eligible": 58,
         "lowSearchVolume": 56,
-        "reviewStatus": "Re-read Nov 24: keywords with impressions MTD (all Eligible, 0 clicks): [do i qualify for food assistance] 22, ebt card help 6, snap eligibility help 2, \"what can i not buy with ebt\" 2, [foods you cant buy with ebt] 2, [how much snap will i get] 1, how to apply for snap 1. Several EBT balance phrase keywords Paused (Low search volume)."
+        "reviewStatus": "Read Nov 25 (MTD): [do i qualify for food assistance] 22 impr/0 clicks, [food stamps requirements] 19 impr/1 click/$0.16 (first click), ebt card help 6, [how to check my ebt balance] 5, [qualifications for snap] 5, [foods you cant buy with ebt] 3. All top keywords Eligible; several Paused for Low search volume."
       },
       "negatives": 25,
       "rsa": {
         "count": 16,
         "strength": "Mix of Excellent, Good, Average; 1 Poor (paused group)",
         "finalUrl": "Topic landing pages (EBT balance, EBT grocery, benefits quiz, internet, Lifeline, warehouse clubs, tax filing, family essentials)",
-        "approval": "Nov 24: no disapprovals. Eligible with impressions: SNAP eligibility and how to apply (Excellent), Broad-match discovery (Good), What you can buy and stretch SNAP (Excellent), SNAP benefit amount questions (Average). 6 more Eligible with 0 impressions; 6 Not eligible (ad group paused). SNAP & EBT Deposit Dates ad strength Poor."
+        "approval": "Nov 25: no disapprovals. SNAP eligibility and how to apply: Eligible, Excellent (47 impr, 1 click). SNAP & EBT Deposit Dates: Eligible, Good (0 impr). Low-cost internet after ACP: Eligible, Average (0 impr). Ads in paused ad groups (EBT balance, EBT online grocery, benefits quiz, Lifeline) Not eligible - ad group paused."
       },
       "colorKey": "green",
       "hex": "#34d399",
-      "notes": "Nov 24: 17 impressions Nov 23; 36 impressions, 0 clicks, $0 month to date (up from 4 through Nov 19). Budget $10/day unchanged. Max CPC limit $0.20 not re-shown on screen today (never changed). Google banner: complete advertiser identity verification by 2026-12-24 or some ads may be paused/limited. 24 search terms MTD, all relevant; no negatives added."
+      "notes": "Nov 25: first click! Nov 24: 27 impressions, 1 click, 3.70% CTR, $0.16 CPC, $0.16 cost. Month to date: 67 impressions, 1 click, 1.49% CTR, $0.16 cost, 0 conversions. Budget $10/day and $0.20 max CPC cap unchanged. 41 search terms MTD, all relevant (click came from 'how to get snap'); no negatives added. Advertiser identity verification due 2026-12-24."
     },
     {
       "id": "florida",
@@ -59,7 +59,7 @@
       "name": "BenefitBoost - Florida SNAP Dates - Search",
       "status": "Paused",
       "eligibility": "Paused",
-      "asOf": "2026-11-24",
+      "asOf": "2026-11-25",
       "dailyBudgetUsd": 10,
       "bidding": "Maximize clicks",
       "maxCpcUsd": 0.2,
@@ -79,7 +79,7 @@
       },
       "colorKey": "accent",
       "hex": "#38bdf8",
-      "notes": "Nov 24: still Paused, 0 impressions month to date. Ad approval not re-read today."
+      "notes": "Nov 25: still Paused; $0 and 0 clicks yesterday and month to date. Not opened in detail today."
     }
   ],
   "adsMetrics": {
@@ -298,29 +298,49 @@
         "clicks": 0,
         "costUsd": 0,
         "status": "Paused"
+      },
+      {
+        "date": "2026-11-24",
+        "campaign": "nationwide",
+        "impressions": 27,
+        "clicks": 1,
+        "costUsd": 0.16,
+        "status": "Eligible (Learning) · Bid strategy learning"
+      },
+      {
+        "date": "2026-11-24",
+        "campaign": "florida",
+        "impressions": 0,
+        "clicks": 0,
+        "costUsd": 0,
+        "status": "Paused"
       }
-    ]
+    ],
+    "mtdImpressions": 67,
+    "mtdClicks": 1,
+    "mtdCostUsd": 0.16,
+    "mtdCtrPct": 1.49,
+    "mtdAvgCpcUsd": 0.16
   },
   "siteTraffic": {
     "ga4MeasurementId": "G-GX501BDC70",
     "searchConsole": "Verified (URL prefix https://getbenefitboost.com/)",
     "status": "Connected (read from dashboards)",
-    "asOf": "2026-11-24",
-    "note": "GA4 Nov 17-23: 20 active users, 21 sessions, 24 views, 0 key events (Nov 23: 3 users, 3 sessions, all Organic Social). Search Console 7d: 16 clicks / 2.65K impressions (pos 26.9); 28d: 21 clicks / 5.07K impressions (pos 24.2). Indexing: 88 indexed, 74 not indexed (73 Discovered - not indexed). Region data includes Oregon, Ireland, Sweden traffic that is likely bots.",
+    "asOf": "2026-11-25",
+    "note": "GA4 Nov 18-24: 10 active users, 10 sessions, 0 key events (Nov 24: 2 users, 2 sessions, Organic Social). Search Console 28d (Oct 28-Nov 23): 25 clicks / 5.54K impressions, CTR 0.5%, pos 24. Indexing (updated Nov 15): 88 indexed, 74 not indexed (73 Discovered - not indexed, 1 redirect). GA4 region breakdown unavailable today (could not switch dimension); states below are from Nov 24.",
     "metrics": {
-      "users": 20,
-      "sessions": 21,
-      "pageviews": 24,
-      "window": "GA4 last 7 days Nov 17-23",
+      "users": 10,
+      "sessions": 10,
+      "pageviews": null,
+      "window": "GA4 last 7 days Nov 18-24",
       "users28d": 104,
       "sessions28d": null,
       "pageviews28d": 111,
       "engagementRate28dPct": 46.15,
       "channels7d": {
-        "Organic Social": 15,
-        "Paid Search": 4,
-        "Organic Search": 1,
-        "Unassigned": 1
+        "Organic Social": 6,
+        "Paid Search": 3,
+        "Organic Search": 1
       },
       "channels28d": {
         "Cross-network": 23,
@@ -332,27 +352,31 @@
       "topPages": [
         {
           "path": "/next-deposit",
-          "views": 9
-        },
-        {
-          "path": "/prime-access",
-          "views": 4
-        },
-        {
-          "path": "/lifeline",
           "views": 3
         },
         {
-          "path": "/",
-          "views": 2
+          "path": "/prime-access",
+          "views": 3
         },
         {
           "path": "/guides/florida-snap-deposit-schedule",
           "views": 2
         },
         {
-          "path": "/snap-deposit-schedule",
+          "path": "/guides/thanksgiving-on-a-snap-budget",
           "views": 2
+        },
+        {
+          "path": "/ebt-groceries",
+          "views": 1
+        },
+        {
+          "path": "/signup",
+          "views": 1
+        },
+        {
+          "path": "/snap-deposit-schedule",
+          "views": 1
         }
       ],
       "topStates": [
@@ -377,21 +401,21 @@
           "users": 1
         }
       ],
-      "organicClicks": 21,
-      "organicImpressions": 5070,
-      "organicCtrPct": 0.4,
-      "avgPosition": 24.2,
-      "organicWindow": "Search Console last 28 days (Oct 28-Nov 24)",
+      "organicClicks": 25,
+      "organicImpressions": 5540,
+      "organicCtrPct": 0.5,
+      "avgPosition": 24,
+      "organicWindow": "Search Console last 28 days (Oct 28-Nov 23)",
       "topQueries": [
         {
           "query": "ebt deposit dates",
           "clicks": 1,
-          "impressions": 30
+          "impressions": 31
         },
         {
           "query": "low cost internet plans",
           "clicks": 1,
-          "impressions": 28
+          "impressions": 31
         },
         {
           "query": "cash assistance schedule 2026",
@@ -399,24 +423,39 @@
           "impressions": 8
         },
         {
+          "query": "low income car insurance",
+          "clicks": 1,
+          "impressions": 6
+        },
+        {
+          "query": "low cost internet",
+          "clicks": 0,
+          "impressions": 100
+        },
+        {
           "query": "low income internet services",
           "clicks": 0,
           "impressions": 95
         },
         {
-          "query": "low cost internet",
-          "clicks": 0,
-          "impressions": 90
-        },
-        {
           "query": "ebt calendar",
           "clicks": 0,
-          "impressions": 87
+          "impressions": 92
         },
         {
           "query": "ebt schedule",
           "clicks": 0,
           "impressions": 67
+        },
+        {
+          "query": "low income internet",
+          "clicks": 0,
+          "impressions": 59
+        },
+        {
+          "query": "low income internet service",
+          "clicks": 0,
+          "impressions": 43
         }
       ],
       "topSearchPages": [
@@ -477,15 +516,15 @@
       "topCountries7d": [
         {
           "country": "United States",
-          "users": 41
+          "users": 6
+        },
+        {
+          "country": "(not set)",
+          "users": 3
         },
         {
           "country": "Ireland",
-          "users": 4
-        },
-        {
-          "country": "Sweden",
-          "users": 4
+          "users": 1
         }
       ],
       "engagedSessions28d": 74,
@@ -517,7 +556,9 @@
           "clicks": 0,
           "impressions": 467
         }
-      ]
+      ],
+      "indexed": 88,
+      "notIndexed": 74
     }
   },
   "affiliates": {
@@ -846,7 +887,7 @@
   "openQuestions": [
     {
       "priority": "high",
-      "item": "US Search: 36 impressions, 0 clicks month to date at the $0.20 cap (17 on Nov 23). Impressions are growing but no clicks yet; decide whether to improve ad copy/enable more ad groups (cap and budget stay as set)."
+      "item": "US Search got its first click Nov 24 (67 impressions, 1 click, $0.16 MTD at the $0.20 cap). Only the 'SNAP eligibility' ad group is getting impressions; decide whether to add more eligibility-style exact keywords (cap and budget stay as set)."
     },
     {
       "priority": "high",
@@ -912,6 +953,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-25",
+      "summary": "Daily check: US Search Eligible (Learning). Nov 24: 27 impressions, 1 click, $0.16 (first click, from 'how to get snap' via [food stamps requirements]). MTD: 67 impressions, 1 click, 1.49% CTR, $0.16. Florida still Paused. 41 search terms, all relevant, no negatives added; no ad changes. GA4 Nov 18-24: 10 users, 10 sessions. Search Console 28d: 25 clicks, 5.54K impressions, pos 24; indexed 88, not indexed 74."
+    },
     {
       "date": "2026-11-24",
       "summary": "Daily check: US Search Eligible (Learning), 17 impressions Nov 23; 36 impressions / 0 clicks / $0 month to date. Florida still Paused. 24 search terms, all relevant, no negatives added; no ad changes. Advertiser verification due Dec 24. GA4 Nov 17-23: 20 users, 21 sessions, 24 views. Search Console 7d: 16 clicks, 2.65K impressions; 28d: 21 clicks, 5.07K impressions, pos 24.2; indexed 88, not indexed 74."
