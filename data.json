@@ -84,26 +84,26 @@
   ],
   "adsMetrics": {
     "awaitingData": false,
-    "throughDate": "2026-11-24",
+    "throughDate": "2026-11-25",
     "totals": {
-      "impressions": 36,
-      "clicks": 0,
-      "costUsd": 0,
-      "ctrPct": 0.0,
-      "avgCpcUsd": null
+      "impressions": 67,
+      "clicks": 1,
+      "costUsd": 0.16,
+      "ctrPct": 1.49,
+      "avgCpcUsd": 0.16
     },
     "byCampaign": {
       "nationwide": {
-        "impressions": 36,
-        "clicks": 0,
-        "costUsd": 0,
-        "note": "Month to date Nov 1-24: 36 impressions, 0 clicks, $0. Nov 23: 17 impressions, 0 clicks, $0. Impressions MTD by ad group: SNAP eligibility and how to apply 22, Broad-match discovery 9, What you can buy and stretch SNAP 4, SNAP benefit amount questions 1. 24 search terms MTD, all relevant close variants (no negatives added)."
+        "impressions": 67,
+        "clicks": 1,
+        "costUsd": 0.16,
+        "note": "Month to date Nov 1-25: 67 impressions, 1 click, 1.49% CTR, $0.16. Nov 24: 27 impressions, 1 click, $0.16. Ad group SNAP eligibility and how to apply: 47 impressions, 1 click. 41 search terms MTD, all relevant (no negatives added)."
       },
       "florida": {
         "impressions": 0,
         "clicks": 0,
         "costUsd": 0,
-        "note": "Campaign Paused (Nov 24 read). 0 impressions month to date; all 26 keywords Not eligible (campaign paused)."
+        "note": "Campaign Paused (Nov 25 read). $0 and 0 clicks month to date."
       }
     },
     "dailyRows": [
@@ -315,12 +315,7 @@
         "costUsd": 0,
         "status": "Paused"
       }
-    ],
-    "mtdImpressions": 67,
-    "mtdClicks": 1,
-    "mtdCostUsd": 0.16,
-    "mtdCtrPct": 1.49,
-    "mtdAvgCpcUsd": 0.16
+    ]
   },
   "siteTraffic": {
     "ga4MeasurementId": "G-GX501BDC70",
