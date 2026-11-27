@@ -5,11 +5,11 @@
     "product": "BenefitBoost",
     "siteUrl": "https://getbenefitboost.com",
     "timezone": "America/New_York",
-    "updatedAt": "2026-11-26T07:55:00-05:00",
+    "updatedAt": "2026-11-27T07:50:00-05:00",
     "dataWindow": {
       "from": "2026-10-28",
       "to": "2026-11-25",
-      "label": "GA4 Nov 19–25 · Ads month to date Nov 1–26 · Search Console last 28 days (data to Nov 24)",
+      "label": "GA4 Nov 19–25 · Ads month to date Nov 1–26 · Search Console last 28 days (data to Nov 24) · Nov 27 check: sources unavailable (box browser could not load Google pages); figures unchanged from Nov 26",
       "granularity": "daily"
     },
     "notes": "Public dashboard. No secrets, customer IDs, vault IDs, or private emails. GA4 and Search Console are read from the dashboards by the daily check. Daily routine appends adsMetrics.dailyRows. Daily job refreshes social.stats (Facebook Professional dashboard + Buffer; Instagram Professional dashboard @benefitboost.us) and appends socialDaily[]. GA4 social referrals stay Not connected yet until API access."
@@ -967,6 +967,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-27",
+      "summary": "Daily check: Google Ads, GA4 and Search Console unavailable — the box browser could not load any Google page (connection error). No new figures recorded; Nov 26 numbers remain. No ad changes."
+    },
     {
       "date": "2026-11-26",
       "summary": "Daily check: US Search Eligible, MTD 81 impressions, 1 click, 1.23% CTR, $0.16; Nov 25: 18 impressions, 0 clicks, $0. Florida still Paused. Search terms all relevant, no negatives added; no ad changes. GA4 Nov 19-25: 21 users, 21 sessions (mostly Organic Social). Search Console 28d: 26 clicks, ~6K impressions, pos 23.8; indexed 88, not indexed 74."
